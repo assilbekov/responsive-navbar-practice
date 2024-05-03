@@ -3,12 +3,14 @@ import "./app.css";
 
 function App() {
   const navRef = useRef<HTMLUListElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   return (
     <div className="primary-header flex">
       <div className="logo">LOGO</div>
 
       <button
+        ref={buttonRef}
         aria-controls="primary-navigation"
         aria-expanded="false"
         className="mobile-nav-toggle"
@@ -17,6 +19,11 @@ function App() {
           if (nav) {
             const visible = nav.getAttribute("data-visible") === "true";
             nav.setAttribute("data-visible", String(!visible));
+          }
+          if (buttonRef.current) {
+            const expanded =
+              buttonRef.current.getAttribute("aria-expanded") === "true";
+            buttonRef.current.setAttribute("aria-expanded", String(!expanded));
           }
         }}
       >
