@@ -11,7 +11,7 @@ body {
 
 .logo {
   margin: 2rem;
-  color: white
+  color: white;
 }
 
 .primary-header {
@@ -24,13 +24,13 @@ body {
   padding: 0;
   margin: 0;
 
-  background: hsl(0 0% 0% / .75);
+  background: hsl(0 0% 0% / 0.75);
 }
 
 /** if backdrop-filter is supported (it's not in firefox) */
 @supports (backdrop-filter: blur(10px)) {
   .primary-navigation {
-    background: hsl(0 0% 100% / .1);
+    background: hsl(0 0% 100% / 0.1);
     backdrop-filter: blur(10px);
   }
 }
@@ -42,12 +42,11 @@ body {
 
 .primary-navigation a > [area-hidden="true"] {
   font-weight: 700;
-  margin-inline-end: .75em;
+  margin-inline-end: 0.75em;
 }
 
 @media (max-width: 35rem) {
   .primary-navigation {
-
     gap: 2em;
 
     position: fixed;
@@ -56,5 +55,19 @@ body {
     flex-direction: column;
     padding: min(20vh, 10rem) 2rem;
   }
-  
+}
+
+
+
+/** https://tailwindcss.com/docs/screen-readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
