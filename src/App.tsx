@@ -4,6 +4,15 @@ function App() {
   return (
     <div className="primary-header flex">
       <div className="logo">LOGO</div>
+
+      <button
+        aria-controls="primary-navigation"
+        aria-expanded="false"
+        className="mobile-nav-toggle"
+      >
+        <span className="sr-only">Menu</span>
+      </button>
+
       <nav>
         <ul id="primary-navigation" className="flex primary-navigation">
           <li className="active">

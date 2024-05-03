@@ -45,15 +45,33 @@ body {
   margin-inline-end: 0.75em;
 }
 
+.mobile-nav-toggle {
+  display: none;
+}
+
 @media (max-width: 35rem) {
   .primary-navigation {
     gap: 2em;
 
     position: fixed;
     inset: 0 0 0 30px;
+    z-index: 1000;
 
     flex-direction: column;
     padding: min(20vh, 10rem) 2rem;
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background-image: url("public/burger.svg");
+    background-repeat: no-repeat;
+    border: 0;
+    z-index: 9999;
+    width: 2rem;
+    aspect-ratio: 1;
   }
 }
 
