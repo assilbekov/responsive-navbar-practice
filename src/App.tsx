@@ -1,6 +1,9 @@
+import { useRef } from "react";
 import "./app.css";
 
 function App() {
+  const navRef = useRef<HTMLUListElement>(null);
+
   return (
     <div className="primary-header flex">
       <div className="logo">LOGO</div>
@@ -9,12 +12,24 @@ function App() {
         aria-controls="primary-navigation"
         aria-expanded="false"
         className="mobile-nav-toggle"
+        onClick={() => {
+          const nav = navRef.current;
+          if (nav) {
+            const visible = nav.getAttribute("data-visible") === "true";
+            nav.setAttribute("data-visible", String(!visible));
+          }
+        }}
       >
         <span className="sr-only">Menu</span>
       </button>
 
       <nav>
-        <ul id="primary-navigation" className="flex primary-navigation">
+        <ul
+          ref={navRef}
+          id="primary-navigation"
+          data-visible="false"
+          className="flex primary-navigation"
+        >
           <li className="active">
             <a href="#index.html">
               <span aria-hidden="true">00</span> Home

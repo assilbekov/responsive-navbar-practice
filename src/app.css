@@ -2,6 +2,8 @@ body {
   background: #07142f;
   width: 100vw;
   height: 100vh;
+
+  overflow-x: hidden;
 }
 
 .flex {
@@ -59,6 +61,14 @@ body {
 
     flex-direction: column;
     padding: min(20vh, 10rem) 2rem;
+
+    /** Move 100% width of the page */
+    transform: translateX(100%);
+    transition: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  .primary-navigation[data-visible="true"] {
+    transform: translateX(0);
   }
 
   .mobile-nav-toggle {
@@ -74,8 +84,6 @@ body {
     aspect-ratio: 1;
   }
 }
-
-
 
 /** https://tailwindcss.com/docs/screen-readers */
 .sr-only {
