@@ -2,8 +2,8 @@ import "./app.css";
 
 function App() {
   return (
-    <div>
-      <div>LOGO</div>
+    <div className="primary-header flex">
+      <div className="logo">LOGO</div>
       <nav>
         <ul id="primary-navigation" className="flex primary-navigation">
           <li className="active">
